@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contactez-nous</title>
+    <style>
+        body {
+            font-family: Lato, sans-serif;
+            background: linear-gradient(to right, #74ebd5, #9face6);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .contact-container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 30px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+        input:focus, textarea:focus {
+            border-color: #74ebd5;
+        }
+        button {
+            background-color: #74ebd5;
+            border: none;
+            padding: 15px 25px;
+            color: white;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #9face6;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="contact-container">
+        <h2>Contactez-nous</h2>
+        <form>
+            <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required><br>
+            <input type="text" id="nom" name="nom" placeholder="Votre nom" required><br>
+            <textarea id="message" name="message" rows="5" placeholder="Votre message" required></textarea><br>
+            <button type="submit">Envoyer</button>
+        </form>
+        <div class="footer">
+            Merci de nous contacter, nous vous répondrons dès que possible!
+        </div>
+    </div>
+</body>
+</html>
