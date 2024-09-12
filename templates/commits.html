@@ -8,8 +8,7 @@
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            background-color: #f4f4f9;
-            padding: 50px;
+            background-color: #f0f0f5;
         }
         h1 {
             color: #333;
@@ -18,7 +17,8 @@
         img {
             border: 2px solid #ddd;
             border-radius: 8px;
-            max-width: 80%;
+            max-width: 90%;
+            height: auto;
         }
         .footer {
             margin-top: 20px;
@@ -28,11 +28,11 @@
     </style>
 </head>
 <body>
-    <h1>Commits par minute</h1>
-    <p>Voici un graphique illustrant le nombre de commits effectués par minute :</p>
-    <img src="{{ url_for('commits_image') }}" alt="Graphique des commits">
+    <h1>Commits par Minute</h1>
+    <p>Le graphique ci-dessous montre le nombre de commits effectués minute par minute :</p>
+    <img src="{{ url_for('commits_image') }}" alt="Graphique des commits par minute">
     <div class="footer">
-        <p>Données extraites depuis le dépôt GitHub : <a href="https://api.github.com/repos/OpenRSI/5MCSI_Metriques/commits" target="_blank">Voir les commits</a></p>
+        <p>Données extraites du dépôt GitHub : <a href="https://api.github.com/repos/OpenRSI/5MCSI_Metriques/commits" target="_blank">Voir les commits</a></p>
     </div>
 </body>
 </html>
