@@ -42,9 +42,9 @@ def extract_minutes(date_string):
     minutes = date_object.minute
     return jsonify({'minutes': minutes})
 
-# Route pour récupérer les commits depuis l'API GitHub et créer le graphique
-@app.route('/commits/')
-def get_commits():
+# Route pour générer le graphique des commits
+@app.route('/commits-image/')
+def commits_image():
     # L'URL de l'API GitHub pour récupérer les commits
     url = 'https://api.github.com/repos/OpenRSI/5MCSI_Metriques/commits'
     
@@ -72,9 +72,15 @@ def get_commits():
     img = BytesIO()
     plt.savefig(img, format='png')
     img.seek(0)
+    plt.close()  # Fermer le graphique pour libérer la mémoire
 
-    # Retourner le graphique comme réponse
+    # Retourner le graphique comme une image PNG
     return send_file(img, mimetype='image/png')
+
+# Route pour afficher la page HTML avec le graphique
+@app.route('/commits/')
+def show_commits():
+    return render_template('commits.html')
   
 if __name__ == "__main__":
   app.run(debug=True)
